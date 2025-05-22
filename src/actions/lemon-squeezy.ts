@@ -14,7 +14,7 @@ export const buySubscription = async (id: string) => {
             },
           },
           product_options: {
-            redirect_url: `${process.env.NEXT_PUBLIC_URL}/pricing`,
+            redirect_url: `https://www.autokinspection.com`,
           },
         },
         relationships: {

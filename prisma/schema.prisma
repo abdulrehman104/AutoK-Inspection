@@ -32,12 +32,13 @@ model ReportRequest {
 }
 
 model Payment {
-  id             String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  lemonSessionId String   @unique
-  amountCents    Int
-  currency       String   @default("USD")
-  status         String   @default("PENDING")
-  createdAt      DateTime @default(now())
+  id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  userId          String
+  stripeSessionId String   @unique
+  amountCents     Int
+  currency        String   @default("USD")
+  status          String   @default("PENDING")
+  createdAt       DateTime @default(now())
 }
 
 model Contact {

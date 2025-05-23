@@ -1,35 +1,38 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
-import { buySubscription } from "@/actions/lemon-squeezy";
-import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
+import { createCheckoutSession } from "@/actions/checkout";
 
-export default function CheckoutButton({ id }: { id: string }) {
-  const router = useRouter();
+export default function CheckoutButton() {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
 
-  // ========================== Lemon Squeezy Code ==========================
-  const handlePayment = async () => {
+  const handlePurchase = async () => {
     try {
       setLoading(true);
 
-      const res = await buySubscription(id);
+      const response = await createCheckoutSession();
 
-      if (res.status !== 200) {
-        throw new Error("Failed to Buy Report");
+      if (response.url) {
+        window.location.href = response.url;
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Checkout Error",
+          description: response.error ?? "Unable to start checkout.",
+        });
       }
-
-      router.push(res.url);
     } catch (error) {
-      console.error("Error buying subscription", error);
+      console.error("Checkout failed:", error);
       toast({
-        title: "Error",
-        description: "Something went wrong while buying report",
         variant: "destructive",
+        title: "Checkout Failed",
+        description:
+          error instanceof Error
+            ? error.message
+            : "An unexpected error occurred. Please try again.",
       });
     } finally {
       setLoading(false);
@@ -37,11 +40,35 @@ export default function CheckoutButton({ id }: { id: string }) {
   };
 
   return (
-    <Button onClick={handlePayment}>
-      {loading ? "Buying..." : "Buy your report"}
+    <Button onClick={handlePurchase} disabled={loading} aria-busy={loading}>
+      {loading ? "Processing…" : "Buy Your Report"}
     </Button>
   );
 }
+
+// ========================== Lemon Squeezy Code ==========================
+// const handlePurchase = async () => {
+//   try {
+//     setLoading(true);
+
+//     const res = await buySubscription(id);
+
+//     if (res.status !== 200) {
+//       throw new Error("Failed to Buy Report");
+//     }
+
+//     router.push(res.url);
+//   } catch (error) {
+//     console.error("Error buying subscription", error);
+//     toast({
+//       title: "Error",
+//       description: "Something went wrong while buying report",
+//       variant: "destructive",
+//     });
+//   } finally {
+//     setLoading(false);
+//   }
+// };
 
 // ========================== Paypal Code ==========================
 // const createOrder = async (price: string, planDetails: any) => {
@@ -120,7 +147,7 @@ export default function CheckoutButton({ id }: { id: string }) {
 // };
 
 {
-  /* // ========================== Paypal Code ========================== */
+  /* ========================== Paypal Button Code ==========================  */
 }
 {
   /* <PayPalScriptProvider options={initialOptions}>

@@ -1,9 +1,10 @@
+import db from "@/lib/db";
+import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
 import { Navbar } from "@/components/navbar";
+import { Button } from "@/components/ui/button";
 import { FooterSection } from "@/components/footer";
 import CheckoutButton from "@/components/checkout-button";
-import { Button } from "@/components/ui/button";
-import { auth } from "@clerk/nextjs/server";
-import db from "@/lib/db";
 
 export default async function PricingPage() {
   const user = await auth();
@@ -15,7 +16,7 @@ export default async function PricingPage() {
   });
 
   if (!userData) {
-    window.location.href = "/sign-up";
+    redirect( "/sign-up") 
   }
 
   const pricing = [
@@ -79,8 +80,8 @@ export default async function PricingPage() {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <CheckoutButton id={userData?.id as string} />
-                      <Button>Check Demo Report</Button>
+                      <CheckoutButton />
+                      {/* <Button>Check Demo Report</Button> */}
                     </div>
                   </div>
                 </div>

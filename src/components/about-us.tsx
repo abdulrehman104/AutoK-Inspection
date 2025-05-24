@@ -112,122 +112,62 @@ export const AboutUs = () => {
         </div>
 
         {/* History Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
-          {/* Text Content with Animation */}
-          <motion.div
-            variants={fadeIn("left", 0.3)}
+        <div className="w-full flex flex-col items-center justify-center mt-16 text-center">
+          <motion.h2
+            variants={fadeIn("up", 0.2)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.6 }}
-            className="space-y-6"
+            className="text-sm font-semibold uppercase text-gray-600 mb-2"
           >
-            <motion.h2
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.6 }}
-              className="text-sm font-semibold uppercase text-gray-600"
-            >
-              Our History
-            </motion.h2>
-            <motion.h3
-              variants={fadeIn("up", 0.2)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.6 }}
-              className="text-4xl font-bold text-gray-900 md:text-5xl"
-            >
-              Our Journey Through Excellence
-            </motion.h3>
-            <motion.p
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.6 }}
-              className="text-gray-600 leading-relaxed"
-            >
-              From humble beginnings to a globally trusted automotive service,
-              AutoK Inspection has grown by prioritizing customer satisfaction
-              and reliable vehicle evaluations.
-            </motion.p>
-            {/* Vision and Mission Cards with Animation */}
-            <motion.div
-              variants={fadeIn("up", 0.4)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Vision</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    To be the leading provider of trusted and accurate
-                    automotive information, empowering vehicle owners worldwide.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Mission</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>
-                    To deliver exceptional car inspection services, exceeding
-                    customer expectations through expertise, integrity, and
-                    transparency.
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </motion.div>
-
-          {/* Image with Stats and Animations */}
-          <motion.div
-            variants={fadeIn("right", 0.3)}
+            Our History
+          </motion.h2>
+          <motion.h3
+            variants={fadeIn("up", 0.2)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.6 }}
-            className="relative"
+            className="text-4xl font-bold text-gray-900 md:text-5xl mb-4"
           >
-            <Image
-              src="/images/about/offfice.jpg"
-              alt="Our team"
-              width={800}
-              height={500}
-              className="rounded-lg object-cover"
-            />
-            {/* Stats with Animation */}
-            <motion.div
-              variants={fadeIn("up", 0.5)}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.6 }}
-              className="absolute -bottom-6 left-4 right-4 md:left-8 md:right-8 bg-custom_red p-6 rounded-xl text-white text-center shadow-lg"
-            >
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-xl font-bold md:text-4xl">
-                    <CountUp start={1900} end={5500} />+
-                  </div>
-                  <p className="text-sm md:text-base">Projects Completed</p>
-                </div>
-                <div>
-                  <div className="text-xl font-bold md:text-4xl">
-                    <CountUp start={0} end={100} />%
-                  </div>
-                  <p className="text-sm md:text-base">Client Satisfaction</p>
-                </div>
-                <div>
-                  <div className="text-xl font-bold md:text-4xl">
-                    <CountUp start={0} end={6} />+
-                  </div>
-                  <p className="text-sm md:text-base">Years of Experience</p>
-                </div>
-              </div>
-            </motion.div>
+            Our Journey Through Excellence
+          </motion.h3>
+          <motion.p
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.6 }}
+            className="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8"
+          >
+            From humble beginnings to a globally trusted automotive service, AutoK Inspection has grown by prioritizing customer satisfaction and reliable vehicle evaluations.
+          </motion.p>
+          {/* Vision and Mission Cards with Animation */}
+          <motion.div
+            variants={fadeIn("up", 0.4)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.6 }}
+            className="flex flex-col md:flex-row gap-4 w-full max-w-2xl mx-auto"
+          >
+            <Card className="">
+              <CardHeader>
+                <CardTitle>Vision</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  To be the leading provider of trusted and accurate automotive information, empowering vehicle owners worldwide.
+                </CardDescription>
+              </CardContent>
+            </Card>
+            <Card className="">
+              <CardHeader>
+                <CardTitle>Mission</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  To deliver exceptional car inspection services, exceeding customer expectations through expertise, integrity, and transparency.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </div>

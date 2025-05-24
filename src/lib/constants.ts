@@ -51,14 +51,13 @@ export const pricing = [
     plan: "Basic Plan",
     price: "$37",
     features: [
-      "1 Report",
-      "Vehicle Report",
+      "1 Vehicle Report",
+      "Vehicle Specification",
       "DMV Title History",
       "Safety Recall Status",
-      "Vehicle Specification",
-      "Accident Information",
       "Online Listing History",
-      "Never Expires",
+      "Junk & Salvage Information",
+      "Accident Information",
     ],
   },
   // {

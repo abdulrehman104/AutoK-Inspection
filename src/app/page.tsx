@@ -9,6 +9,7 @@ import { TestimonialsSection } from "@/components/testimonial";
 import { ContactSection } from "@/components/contact-form";
 import { Flags } from "@/components/flags";
 import { Pricing } from "@/components/pricing";
+import { Disclaimer } from "@/components/disclaimer";
 
 export default function Home() {
   return (
@@ -18,12 +19,13 @@ export default function Home() {
       <InspectionReportForm />
       <Flags />
       <AboutUs />
-      <Services />
       <WhyUs />
-      <TestimonialsSection />
-      {/* <Pricing /> */}
+      <Pricing />
       <ContactSection />
+      <Disclaimer/>
       <FooterSection />
+      {/* <Services /> */}
+      {/* <TestimonialsSection /> */}
     </main>
   );
 }

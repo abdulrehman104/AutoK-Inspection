@@ -106,41 +106,35 @@ export const ContactSection = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="grid grid-cols-1 md:grid-cols-2 gap-10 my-20 mx-auto container"
-    >
-      {/* Left Image */}
-      <div
-        className="relative h-[400px] lg:h-full"
-      >
-        <Image
-          src="/images/contact/contact.png"
-          alt="Mechanic inspecting a vehicle"
-          fill
-          className="object-cover rounded-l-xl"
-          priority
-        />
+    <section id="contact" className="mb-20 py-10 px-2 bg-custom_red">
+      {/* Centered Section Heading */}
+      <div className="text-center mb-12 pt-12">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white drop-shadow">Contact Us</h2>
+        <p className="text-lg text-white max-w-2xl mx-auto">
+          Have questions or need assistance? Contact us today for personalized support and expert guidance on all things automotive.
+        </p>
       </div>
 
-      {/* Contact Form */}
-      <div className="bg-custom_red p-8 lg:p-12 rounded-r-xl">
-        <div className="max-w-xl">
-          <h2 className="text-white text-sm font-semibold uppercase tracking-wider mb-4">
-            CONTACT US
-          </h2>
-          <h3 className="text-white text-4xl md:text-5xl font-bold mb-6">
-            Let&apos;s work together
-          </h3>
-          <p className="text-lg mb-8">
-            Have questions or need assistance? Contact us today for personalized
-            support and expert guidance on all things automotive.
+      {/* 2-column grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start max-w-5xl mx-auto bg-white rounded-xl shadow-lg p-0 md:p-10">
+        {/* Left Content */}
+        <div className="flex flex-col justify-start h-full py-10 px-6 md:px-10">
+          <h3 className="text-3xl md:text-4xl font-extrabold mb-6 text-custom_red">Get in Touch</h3>
+          <p className="text-gray-700 mb-6 text-lg">
+            We are here to help you with any queries or support you need regarding our services. Our team responds quickly!
           </p>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="font-semibold text-gray-900 text-lg">Email:</span>
+            <a href="mailto:info@example.com" className="text-custom_red underline text-lg font-medium">info@example.com</a>
+          </div>
+        </div>
 
+        {/* Right Contact Form */}
+        <div className="py-10 px-6 md:px-10">
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="space-y-6 p-3 md:p-6"
+              className="space-y-6"
             >
               {/* First Name and Last Name */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

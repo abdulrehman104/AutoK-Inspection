@@ -63,10 +63,10 @@ export const HeroSection = () => {
           className="relative w-full max-w-[600px] mt-10 xl:mt-0"
         >
           <Image
-            src="/images/hero/car.svg"
+            src="/carImage/1.png"
             alt="Car Rental"
-            width={800}
-            height={500}
+            width={900}
+            height={600}
             className="object-contain"
             priority
           />

@@ -6,7 +6,7 @@ export const Disclaimer = () => {
       {/* Top Description */}
       <p className="text-center text-gray-700 text-base mb-4 px-2">
         The AutoK Inspection Report includes information gathered from the
-        industry's most known and trustworthy data providers and specialists.
+        industry&aposs most known and trustworthy data providers and specialists.
       </p>
 
       {/* Logos Row */}

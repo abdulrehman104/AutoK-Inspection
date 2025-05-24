@@ -37,7 +37,7 @@ export const FooterSection = () => {
               </li>
               <li>
                 <Link href="/#services" className="hover:text-white">
-                  Services
+                  SERVICES
                 </Link>
               </li>
             </ul>
